@@ -1,0 +1,111 @@
+/* .card-list {
+    width: 90vw;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columns
+    gap: 20px;
+    max-width: 1200px} */
+
+  /* .card-container {
+    aspect-ratio: 1 / 1; /* Keeps each card square
+    background-color: #95dada;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .card-container:hover {
+    transform: scale(1.05);
+  }
+  */
+
+  /* .card-list {
+    width: 85vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+  } */
+
+  /* .card-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #95dada;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 25px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+  }
+  
+  .card-container:hover {
+    transform: scale(1.05);
+  } */
+  .card-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Always 6 columns */
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+
+  .match-message {
+    position: fixed; /* Position relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Full screen or container size */
+    background-color: rgba(211, 211, 211, 0.01); /* Light grey background */
+    /* backdrop-filter: blur(5px); Optional blur effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it covers everything */
+    color: #a01f1f; /* Red text for match message */
+    font-size: 2rem; /* Adjust font size */
+    font-weight: bold;
+    border-radius: 12px;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .card-list {
+      transform: scale(0.8); /* Shrinks the entire grid by 20% */
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .card-list {
+      transform: scale(0.7); /* Shrinks more as the screen gets smaller */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .card-list {
+      transform: scale(0.6); /* Even more shrinkage for very small screens */
+    }
+  }

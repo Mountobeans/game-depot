@@ -1,0 +1,17 @@
+import dollImg from '../assets/images/doll.jpg';
+import ballImg from '../assets/images/ball.jpg';
+import puppetImg from '../assets/images/puppet.jpg';
+import skatesImg from '../assets/images/skates.jpg';
+import bikeImg from '../assets/images/bike.jpg';
+import actionfigureImg from '../assets/images/actionfigure.jpg';
+
+const toys = [
+    {name: "doll", image: dollImg}, 
+    {name: "action figure", image: actionfigureImg}, 
+    {name: "ball", image: ballImg}, 
+    {name: "puppet", image: puppetImg}, 
+    {name: "skates", image: skatesImg}, 
+    {name: "bike", image: bikeImg}
+]
+
+export default toys;
