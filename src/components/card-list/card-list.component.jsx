@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {motion} from 'framer-motion'
-import toys from "../../toylist.data"
+import toys from "../../toylist.data";
 import "./card-list.style.css";
 import Card from "../card-component/single-card.component"
 
