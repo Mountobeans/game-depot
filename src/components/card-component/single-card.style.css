@@ -15,13 +15,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: lightskyblue;
     font-size: 24px;
     font-weight: bold;
     border-radius: 8px;
   }
   
   .card-back {
-    background-color: #ececec;
+    background-color: lightskyblue;
     display: flex;
     justify-content: center;
     align-items: center;
