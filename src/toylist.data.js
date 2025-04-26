@@ -1,15 +1,15 @@
-import dollImg from './assets/images/doll.jpg';
-import ballImg from './assets/images/ball.jpg';
-import puppetImg from './assets/images/puppet.jpg';
-import skatesImg from './assets/images/skates.jpg';
-import bikeImg from './assets/images/bike.jpg';
-import actionfigureImg from './assets/images/actionfigure.jpg';
-import blocksImg from './assets/images/blocks.jpg';
-import trainImg from './assets/images/train.jpg';
-import gameImg from './assets/images/game.jpg';
-import stuffedAnimalsImg from './assets/images/stuffedanimals.jpg';
-import planeImg from './assets/images/plane.jpg';
-import carsImg from './assets/images/cars.jpg';
+import dollImg from './assets/images/toys/doll.jpg';
+import ballImg from './assets/images/toys/ball.jpg';
+import puppetImg from './assets/images/toys/puppet.jpg';
+import skatesImg from './assets/images/toys/skates.jpg';
+import bikeImg from './assets/images/toys/bike.jpg';
+import actionfigureImg from './assets/images/toys/actionfigure.jpg';
+import blocksImg from './assets/images/toys/blocks.jpg';
+import trainImg from './assets/images/toys/train.jpg';
+import gameImg from './assets/images/toys/game.jpg';
+import stuffedAnimalsImg from './assets/images/toys/stuffedanimals.jpg';
+import planeImg from './assets/images/toys/plane.jpg';
+import carsImg from './assets/images/toys/cars.jpg';
 
 const toys = [
     { key: 1, name: 'doll', match: 'doll' },

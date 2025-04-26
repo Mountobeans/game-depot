@@ -52,7 +52,7 @@
   } */
   .card-list {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* Always 6 columns */
+    grid-template-columns: repeat(4, 1fr); /* Always 6 columns */
     gap: 20px;
     width: 100%;
     max-width: 1200px;
@@ -80,6 +80,14 @@
     text-align: center;
     padding: 20px;
     animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .red-line {
+    height: 5px; /* Adjust the thickness of the line */
+    background-color: red; /* Color of the line */
+    margin: 20px 0; /* Adds space above and below the line */
+    grid-column: span 4; /* Makes the red line span the entire width of the grid */
+
   }
   
   @keyframes fadeIn {

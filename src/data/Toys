@@ -1,9 +1,9 @@
-import dollImg from '../assets/images/doll.jpg';
-import ballImg from '../assets/images/ball.jpg';
-import puppetImg from '../assets/images/puppet.jpg';
-import skatesImg from '../assets/images/skates.jpg';
-import bikeImg from '../assets/images/bike.jpg';
-import actionfigureImg from '../assets/images/actionfigure.jpg';
+import dollImg from '../assets/images/toys/doll.jpg';
+import ballImg from '../assets/images/toys/ball.jpg';
+import puppetImg from '../assets/images/toys/puppet.jpg';
+import skatesImg from '../assets/images/toys/skates.jpg';
+import bikeImg from '../assets/images/toys/bike.jpg';
+import actionfigureImg from '../assets/images/toys/actionfigure.jpg';
 
 const toys = [
     {name: "doll", image: dollImg}, 

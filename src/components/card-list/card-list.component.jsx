@@ -1,17 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import toys from "../../toylist.data";
+import storyItems from "../../kingtube.data";
 import "./card-list.style.css";
 import Card from "../card-component/single-card.component"
 
-const MatchMessage = ({toyCards, setToyCards, setShowModal, tries, gameOver}) => {
+const MatchMessage = ({cards, setCards, setShowModal, tries, gameOver}) => {
       
-  const selectedCards = toyCards.filter(card => card.isFlipped && !card.isMatched)
+  const selectedCards = cards.filter(card => card.isFlipped && !card.isMatched)
   const isMatch = (selectedCards[0]?.match === selectedCards[1]?.match)
   return (
  <div className = "match-message"
       onClick = {() => {
         if (!isMatch) {
-          setToyCards(prevCards => 
+          setCards(prevCards => 
           prevCards.map(card =>
             selectedCards.some(selected => selected.key === card.key) ?
           {...card, 
@@ -20,7 +21,7 @@ const MatchMessage = ({toyCards, setToyCards, setShowModal, tries, gameOver}) =>
         ))
       }
       else {
-        setToyCards(prevCards => 
+        setCards(prevCards => 
           prevCards.map(card => 
             selectedCards.some(selected => selected.key === card.key) ?
           {...card, 
@@ -37,26 +38,26 @@ const MatchMessage = ({toyCards, setToyCards, setShowModal, tries, gameOver}) =>
     <>
       You Lose!
       <br />
-      Tries: {tries}
+      {/* Tries: {tries} */}
     </>
   ) : (
     <>
       You Win!
       <br />
-      Tries: {tries}
+      {/* Tries: {tries} */}
     </>
   )
 ) : isMatch ? (
   <>
     You Got A Match!
     <br />
-    Tries: {tries}
+    {/* Tries: {tries} */}
   </>
 ) : (
   <>
     Try Again!
     <br />
-    Tries: {tries}
+    {/* Tries: {tries} */}
   </>
 )}
   </div>
@@ -76,9 +77,10 @@ const CardList = () => {
   const [showModal, setShowModal] = useState(false)
   const [tries, setTries] = useState(20)
   const [gameOver, setGameOver] = useState(false)
+  const isDivided = true
 
-  const [toyCards, setToyCards] = useState(() => {
-  const shuffledToys = shuffleArray(toys);
+  const [cards, setCards] = useState(() => {
+  const shuffledToys = shuffleArray(storyItems)
   return shuffledToys.map(toy => ({
       key: toy.key,
       image: toy.image,
@@ -89,11 +91,18 @@ const CardList = () => {
     }));
   })
 
-  const handleClick = (toyKey) => {
+  // const nameCards = cards.filter(card => card.name);
+  // const imageCards = cards.filter(card => card.image);
+  
+
+  
+
+  
+  const handleClick = (cardKey) => {
   if (!showModal) {
-      setToyCards(prevCards => 
+      setCards(prevCards => 
         prevCards.map(card => {
-          if (card.key === toyKey) {
+          if (card.key === cardKey) {
             if (!card.isMatched) {
               return {...card, isFlipped: true}
             }
@@ -102,27 +111,28 @@ const CardList = () => {
         })
       )
     }
+    console.log(cardKey)
     }
     
     useEffect(() => {
-      const selectedCards = toyCards.filter(card => card.isFlipped && !card.isMatched)
+      const selectedCards = cards.filter(card => card.isFlipped && !card.isMatched)
 
       if (selectedCards.length === 2) {
         setShowModal(true)
-        const selectedCards = toyCards.filter(card => card.isFlipped && !card.isMatched)
+        const selectedCards = cards.filter(card => card.isFlipped && !card.isMatched)
         const isMatch = (selectedCards[0]?.match === selectedCards[1]?.match)
-        if(!isMatch) setTries(prev => prev-1)
+        // if(!isMatch) setTries(prev => prev-1)
       }
 
-    }, [toyCards])
+    }, [cards])
 
     useEffect(() => {
-      const allMatched = toyCards.every(card => card.isMatched);
+      const allMatched = cards.every(card => card.isMatched);
       if (!gameOver && (tries === 0 || allMatched)) {
         setGameOver(true);
         setShowModal(true);
       }
-    }, [tries, toyCards, gameOver]);
+    }, [tries, cards, gameOver]);
 
     // const checkForMatch = function(selectedCards) {
       
@@ -133,16 +143,15 @@ const CardList = () => {
 
   return (
     <div className="card-list">
-      {toyCards.map((toy) => {
+      {showModal && <MatchMessage setShowModal = {setShowModal} setCards = {setCards} cards={cards} tries = {tries} gameOver = {gameOver} />}
 
-        const {isFlipped, isMatched, key, name, image} = toy
+      {cards.filter(card => card.image).map(({isFlipped, isMatched, key, name, image}) => {
 
         return (
           <>
-          {showModal && <MatchMessage setShowModal = {setShowModal} setToyCards = {setToyCards} toyCards={toyCards} tries = {tries} gameOver = {gameOver} />}
         <Card
           key={key}
-          toyKey = {key}
+          cardKey = {key}
           front={<div>?</div>}
           back={
             <>
@@ -153,7 +162,31 @@ const CardList = () => {
             </>
           }
           isFlipped = {isFlipped}
-          handleClick = {handleClick}
+          handleClick = {() => handleClick(key)}
+          isMatched = {isMatched}
+        />
+        </>
+        )
+      })}
+      {isDivided && <div className="red-line"></div>}
+      {cards.filter(card => card.name).map(({isFlipped, isMatched, key, name, image}) => {
+
+        return (
+          <>
+        <Card
+          key={key}
+          cardKey = {key}
+          front={<div>?</div>}
+          back={
+            <>
+              {name && <h3>{name}</h3>}
+              {image && (
+                <img src={image} alt={name} style={{ width: "100%" }} />
+              )}
+            </>
+          }
+          isFlipped = {isFlipped}
+          handleClick = {() => handleClick(key)}
           isMatched = {isMatched}
         />
         </>
