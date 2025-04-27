@@ -136,10 +136,6 @@ const CardList = () => {
 
     // const checkForMatch = function(selectedCards) {
       
-      
-      
-  
-
 
   return (
     <div className="card-list">

@@ -1,0 +1,62 @@
+.picture-reveal-container{
+    background-color: blue;
+    display: flex;
+    /* width: 100%; */
+    max-height: 100vh;
+}
+.picture-reveal-cardlist-container{
+    background-color: blue;
+    display: flex;
+    /* width: 100%; */
+    max-height: 100vh;
+}
+
+.picture-reveal-div{
+    display:flex;
+    align-items: center;
+    height: 80%;
+    flex-direction: column;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:rgb(176, 13, 13)
+}
+
+.controls-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    /* gap: 30px;  */
+    align-items: center; 
+    /* margin-top: 20px;  */
+    max-height: 50vh;
+  }
+  
+  .controls-div button {
+    background: linear-gradient(135deg, #f36f6f 0%, #d14b4b 100%);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px; 
+  }
+  
+  .controls-div button:hover {
+    background: linear-gradient(135deg, #fc7f7f 0%, #eb5b5b 100%);
+    transform: scale(1.05);
+  }
+  
+  .controls-div button:active {
+    background: linear-gradient(135deg, #e04b4b 0%, #b93b3b 100%);
+    transform: scale(0.95);
+  }
+  
+  .controls-div p {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 10px; 
+  }

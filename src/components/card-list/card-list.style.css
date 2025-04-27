@@ -1,13 +1,5 @@
-/* .card-list {
-    width: 90vw;
-    margin: 40px auto;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 columns
-    gap: 20px;
-    max-width: 1200px} */
-
-  /* .card-container {
-    aspect-ratio: 1 / 1; /* Keeps each card square
+     /* .card-container {
+    aspect-ratio: 1 / 1;
     background-color: #95dada;
     border: 1px solid grey;
     border-radius: 5px;
@@ -22,10 +14,9 @@
   
   .card-container:hover {
     transform: scale(1.05);
-  }
-  */
+  } */
 
-  /* .card-list {
+    /* .card-list {
     width: 85vw;
     margin: 0 auto;
     display: grid;
@@ -33,7 +24,7 @@
     grid-gap: 20px;
   } */
 
-  /* .card-container {
+    /* .card-container {
     display: flex;
     flex-direction: column;
     background-color: #95dada;
@@ -45,36 +36,40 @@
     backface-visibility: hidden;
     transform: translateZ(0);
     transition: transform 0.25s ease-out;
-  }
+  } */
   
-  .card-container:hover {
+  /* .card-container:hover {
     transform: scale(1.05);
   } */
+
   .card-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Always 6 columns */
-    gap: 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1vw;
+    /* width: 100%; */
+    /* max-width: 100%; */
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    /* overflow-y: scroll;  */
+    /* flex-grow: 1;*/
+    flex-grow: 0;
   }
 
   .match-message {
-    position: fixed; /* Position relative to the viewport */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Full screen or container size */
-    background-color: rgba(211, 211, 211, 0.01); /* Light grey background */
-    /* backdrop-filter: blur(5px); Optional blur effect */
+    height: 100%; 
+    background-color: rgba(211, 211, 211, 0.01);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Ensure it covers everything */
-    color: #a01f1f; /* Red text for match message */
-    font-size: 2rem; /* Adjust font size */
+    z-index: 1000; 
+    color: #a01f1f;
+    font-size: 2rem;
     font-weight: bold;
     border-radius: 12px;
     text-align: center;
@@ -83,10 +78,10 @@
   }
 
   .red-line {
-    height: 5px; /* Adjust the thickness of the line */
-    background-color: red; /* Color of the line */
-    margin: 20px 0; /* Adds space above and below the line */
-    grid-column: span 4; /* Makes the red line span the entire width of the grid */
+    height: 5px; 
+    background-color: red; 
+    margin: 20px 0; 
+    grid-column: span 4; 
 
   }
   
@@ -99,20 +94,20 @@
     }
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 900px) {
     .card-list {
-      transform: scale(0.8); /* Shrinks the entire grid by 20% */
+      transform: scale(0.8); 
     }
   }
   
   @media (max-width: 900px) {
     .card-list {
-      transform: scale(0.7); /* Shrinks more as the screen gets smaller */
+      transform: scale(0.7); 
     }
   }
   
   @media (max-width: 600px) {
     .card-list {
-      transform: scale(0.6); /* Even more shrinkage for very small screens */
+      transform: scale(0.6); 
     }
   }

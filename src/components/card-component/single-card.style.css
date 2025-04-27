@@ -1,6 +1,7 @@
 .card-wrapper {
-  width: 100%; /* Fill grid cell */
-  aspect-ratio: 1 / 1; /* Keep square shape */
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
 }
   
   .card-face {
@@ -19,6 +20,9 @@
     font-size: 24px;
     font-weight: bold;
     border-radius: 8px;
+    background-color: yellow;
+    border-radius: 30px;
+
   }
   
   .card-back {
@@ -27,13 +31,14 @@
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+
   }
 
   .card-front img, 
 .card-back img {
-  width: 100%;  /* Make image fill the width of the card */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Optionally, control how the image fills the container */
+  width: 100%;  
+  height: auto;
+  object-fit: cover;
 }
   
   .card-wrapper.focused .card-front {

@@ -35,9 +35,9 @@ const Card = ({ front, back, toyKey, isFlipped, isMatched, handleClick }) => {
         className="card-face card-front"
         style={{
           backfaceVisibility: 'hidden',
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
+          // position: 'absolute',
+          // width: '100%',
+          // height: '100%',
         }}
       >
         {front}
@@ -49,9 +49,9 @@ const Card = ({ front, back, toyKey, isFlipped, isMatched, handleClick }) => {
         style={{
           transform: 'rotateY(180deg)',  // Flip the back 180 degrees
           backfaceVisibility: 'hidden',
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
+          // position: 'absolute',
+          // width: '100%',
+          // height: '100%',
         }}
       >
         {back}
