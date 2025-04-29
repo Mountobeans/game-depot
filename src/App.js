@@ -18,10 +18,10 @@ function App() {
 
                 {/* Navigation links */}
                 <div className="button-container">
-                  <Link to="/card-game" className="game-button">
+                  <Link to="/card-game" className="button-53">
                     Memory
                   </Link>
-                  <Link to="/picture-reveal" className="game-button">
+                  <Link to="/picture-reveal" className="button-53 second-53">
                     Image Reveal
                   </Link>
                 </div>

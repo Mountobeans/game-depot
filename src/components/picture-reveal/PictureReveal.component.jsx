@@ -12,39 +12,74 @@ function PictureReveal() {
   const [imageArr, setImageArr] = useState(storyItems.filter(card => card.image).map(card => card.image))
   const [currImage, setCurrImage] = useState()
   const [displayedImages, setDisplayedImages] = useState([])
+  const isGameOver = revealedSquares.size === totalSquares
 
   const handleClick = () => {
-    if(currImage) {
+    if(isGameOver) {
+      setRevealedSquares(new Set())
+      setTimeout(() => {
+        getRandomImage();
+      }, 500)
+    } else if (currImage && revealedSquares.size < totalSquares) {
     const randomIndex = Math.floor(totalSquares * Math.random());
-    if (!revealedSquares.has(randomIndex) && revealedSquares.size < totalSquares) {
-      setRevealedSquares((prev) => new Set(prev).add(randomIndex));
-    } else {
-      (handleClick())
-    }}
+      if (!revealedSquares.has(randomIndex)) {
+          setRevealedSquares((prev) => new Set(prev).add(randomIndex));
+      } else if (revealedSquares.size < totalSquares) {
+          handleClick()
+        }
+    } 
+    console.log("total squares = ", totalSquares)
+    console.log("revealedSquares.size = ", revealedSquares.size)
   }
+  
+  console.log("displayedImages = ", displayedImages)
+
+
+      // else if (revealedSquares.size >= totalSquares) {
+      //   getRandomImage()
+      // }
+      // if (
+        //   !isGameOver
+        //   currImage
+        // ) {
+        //   revealAllSquares()
+        // }
+
+  const revealAllSquares = () => {
+    const allSquares = new Set();
+    for (let i = 0; i < totalSquares; i++) {
+      allSquares.add(i);
+    }
+    setRevealedSquares(allSquares);
+  };
 
        const getRandomImage = () => {
+        // if(!currImage) {
         const tempDisplayArray = imageArr.filter(image => !displayedImages.includes(image))
         if (tempDisplayArray.length > 0) {
         let tempCurrImage = tempDisplayArray[Math.floor(Math.random()*tempDisplayArray.length)]
         setCurrImage(tempCurrImage)
         setDisplayedImages((prev) => [...prev, tempCurrImage])
-      } else {
-        setCurrImage(null);
-      }
-        }   
+      // } else {
+      //   setCurrImage(null);
+      // }
+        }}
+      // }   
 
   const resetGame = () => {
-    setRevealedSquares(new Set());
-    setDisplayedImages([])
-    getRandomImage()
+    // setRevealedSquares(new Set());
+    // setDisplayedImages([])
+    // getRandomImage()
+    revealAllSquares()
   };
 
-  useEffect(() => {
-    if (displayedImages.length === 0) {
-      getRandomImage();
-    }
-  }, [displayedImages]);
+  // useEffect(() => {
+  //   if (displayedImages.length === 0) {
+  //     getRandomImage();
+  //   }
+  // }, [displayedImages]);
+
+  
 
   return (
     <div className = "picture-reveal-div">
@@ -59,7 +94,7 @@ function PictureReveal() {
       />
       <Controls onReset={resetGame} onReveal={handleClick} 
       getRandomImage={getRandomImage} 
-      isGameOver={revealedSquares.size === totalSquares} 
+      isGameOver={isGameOver} 
       currImage = {currImage}
       />
     </div>

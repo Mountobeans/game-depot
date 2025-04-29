@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import crown from "../../assets/images/king-tub/crown.jpg"
 
 
@@ -7,7 +7,7 @@ function ImageReveal({ rows, cols, revealedSquares, currImage, imageArr}) {
 
   const squares = [];
 
-  console.log(imageArr);
+  // console.log(imageArr)
 
   for (let i = 0; i < totalSquares; i++) {
     const row = Math.floor(i / cols);
