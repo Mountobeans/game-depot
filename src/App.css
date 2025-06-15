@@ -59,7 +59,7 @@ html, body {
   /* max-width: 1200px; */
   padding: 0;
   /* box-sizing: border-box; */
-  height: 100vh;
+  /* height: 100vh;                       took out to compress grid height */
     /* width: 50%; */
 }
 

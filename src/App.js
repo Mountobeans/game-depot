@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import CardList from './components/card-list/card-list.component'; // Assuming this is the Card Game component
 import PictureReveal from './components/picture-reveal/PictureReveal.component'; // Assuming this is another game
+import CrossWord from './components/crossword/crossword.component'; // Assuming this is another game
+import GPTCrossWord from './components/GPTCrossWord/gpt-crossword.component'; // Assuming this is another game
 
 function App() {
   return (
@@ -24,6 +26,12 @@ function App() {
                   <Link to="/picture-reveal" className="button-53 second-53">
                     Image Reveal
                   </Link>
+                  <Link to="/crossword-puzzle" className="button-53 second-53">
+                    Crossword
+                  </Link>
+                  <Link to="/gpt-crossword-puzzle" className="button-53 second-53">
+                    GPTCrossword
+                  </Link>
                 </div>
               </header>
             }
@@ -36,6 +44,14 @@ function App() {
           <Route path="/picture-reveal" element={
             <div className="game-container">
                 <PictureReveal />
+           </div>} />
+          <Route path="/crossword-puzzle" element={
+            <div className="game-container">
+                <CrossWord />
+           </div>} />
+          <Route path="/gpt-crossword-puzzle" element={
+            <div className="game-container">
+                <GPTCrossWord />
            </div>} />
 
          

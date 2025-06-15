@@ -1,0 +1,22 @@
+.gpt-crossword-container {
+  display: grid;
+  grid-template-columns: repeat(12, 30px);
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.gpt-cell {
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  font-family: monospace;
+  background-color: white;
+}
+
+.cw-cont-and-input{
+  display:flex;
+  flex-direction: column;
+}
